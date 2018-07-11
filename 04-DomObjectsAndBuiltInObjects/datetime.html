@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Date and Time</title>
+    <style>
+        p {font: 14px normal arial, verdana, helvetica;}
+    </style>
+    <script>
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        function telltime() {
+            var out = "";
+            var now = new Date();
+            out += "<br />Date: " + now.getDate();
+            out += "<br />Month: " + now.getMonth();
+            out += "<br />Year: " + now.getFullYear();
+            out += "<br />Hours: " + now.getHours();
+            out += "<br />Minutes: " + now.getMinutes();
+            out += "<br />Seconds: " + now.getSeconds();
+            document.getElementById("div1").innerHTML = out;
+        }
+
+        function telltimealternate() {
+            var out = "";
+            var now = new Date();
+            out += now.getDate();
+            out += " " + monthNames[now.getMonth()];
+            out += " " + now.getFullYear();
+            out += " " + now.getHours();
+            out += ":" + now.getMinutes().toPrecision(2);
+            document.getElementById("div1").innerHTML = out;
+        }
+    </script>
+</head>
+<body>
+    The current date and time is:<br/>
+    <div id="div1">
+
+    </div>
+
+    <script>
+        telltimealternate();
+    </script>
+    
+    <button onclick="location.reload(true);">Refresh</button>
+</body>
+</html>
