@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deck Of Cards</title>
+    <script>
+        function Card(){
+            var suit = "Spades";
+            var suits = ["Spades", "Diamonds", "Hearts", "Clubs"];
+            var face = "Ace";
+            var faces = ["Ace", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+            
+            this.SetSuit = function(newSuit){
+                if(suits.indexOf(newSuit) >= 0)
+                {
+                    suit = newSuit;
+                }
+            }
+            
+            this.SetFace = function(newFace){
+                if(faces.indexOf(newFace) >= 0)
+                {
+                    face = newFace;
+                }
+            }
+            
+            this.GetFace = function(){
+                return face;
+            }
+            
+            this.GetSuit = function(){
+                return suit;
+            }
+
+            this.ShowCard = function()
+            {
+                window.alert("Face: " + face + "\nSuit: " + suit);
+            }
+
+            ConvertNumberToFace = function(faceNumber)
+            {
+                return faces[faceNumber];
+            }
+
+            ConvertNumberToSuit = function(suitNumber)
+            {
+                return suits[suitNumber];
+            }
+
+            GetRandomSuit = function()
+            {
+                var suitNumber = Math.floor(Math.random() * 4);
+                var newSuit = ConvertNumberToSuit(suitNumber);
+                return newSuit;
+            }
+
+            GetRandomFace = function()
+            {
+                var faceNumber = Math.floor(Math.random() * 14);
+                var newFace = ConvertNumberToFace(faceNumber);
+                return newFace;
+            }
+
+            this.ShuffleCard = function()
+            {
+                face = GetRandomFace();
+                suit = GetRandomSuit();
+                console.log(face + " of " + suit);
+            }
+        }
+
+        FirstCard = new Card();
+        SecondCard = new Card();
+    </script>
+</head>
+<body>
+    <input type="button" value="Show Card 1" onclick="FirstCard.ShowCard()" />
+    <input type="button" value="Show Card 2" onclick="SecondCard.ShowCard()" />
+    <input type="button" value="Change Card 2" onclick="SecondCard.SetFace('King');" />
+    <input type="button" value="Shuffle Card 1" onclick="FirstCard.ShuffleCard();" />
+</body>
+</html>
