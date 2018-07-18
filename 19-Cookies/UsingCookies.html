@@ -25,8 +25,15 @@
 </head>
 
 <body>
-    <input type="button" value="Create Single Cookie" onclick="GetCookieFromUser();" />
-    <input type="button" value="Create Multi-value Cookie" onclick="GetMultipleCookiesFromUser();"/>
+    <div id="CreateCookies">
+        <input type="button" value="Create Single Cookie" onclick="GetCookieFromUser();" />
+        <input type="button" value="Create Multi-value Cookie" onclick="GetMultipleCookiesFromUser();"/>
+    </div>
+    <br />
+    <div id="DeleteCookies">
+        <input type="button" value="Delete Single Cookie" onclick="deleteCookie('myCookieData');" />
+        <input type="button" value="Delete Multi-value Cookie" onclick="deleteCookie('myMultiCookieData');"/>
+    </div>
     <p><a href="CookieTest2.html">Go to Cookie Test Page 2</a></p>
     <p>Note: Check the cookies for this domain using your browser tools.</p>
 </body>
