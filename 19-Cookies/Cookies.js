@@ -13,6 +13,17 @@ function createCookie(name, value, days, path, domain, secure) {
     document.cookie = cookieString;
 }
 
+function createMultiValueCookie(name, cookieValuesArray){
+    var cookieValueString = "";
+    for(var i=0; i < cookieValuesArray.length; i++){
+        if(cookieValueString.length > 0){
+            cookieValueString += "#";
+        }
+        cookieValueString += cookieValuesArray[i];
+    }
+    createCookie(name, cookieValueString);
+}
+
 function getCookie(name) {
     var nameEquals = name + "=";
     var crumbs = document.cookie.split(';');
