@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Using Cookies</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="Cookies.js"></script>
     <script>
         window.onload = function() {
-            var cookievalue = prompt("Cookie value:");
-            createCookie("myCookieData", cookievalue);
+            document.getElementById("output").innerHTML = "Your cookie value: " + getCookie("myCookieData");
         }
     </script>
 </head>
-
 <body>
-<a href="CookieTest2.html">Go to Cookie Test Page 2</a></br>
-<p>Note: Check the cookies for this domain using your browser tools.</p>
+    <a href="UsingCookies.html">Back to Using Cookies</a><br/>
+    <div id="output"></div>
 </body>
-
 </html>
