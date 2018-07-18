@@ -1,22 +1,22 @@
 function createCookie(name, value, days, path, domain, secure) {
     if (days) {
         var date = new Date();
-        date.setTime( date.getTime() + (days*24*60*60*1000));
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         var expires = date.toGMTString();
     }
     else var expires = "";
-    cookieString = name + "=" + escape (value);
-    if (expires) cookieString +=   "; expires=" + expires;
-    if (path) cookieString += "; path=" + escape (path);
-    if (domain) cookieString += "; domain=" + escape (domain);
+    cookieString = name + "=" + escape(value);
+    if (expires) cookieString += "; expires=" + expires;
+    if (path) cookieString += "; path=" + escape(path);
+    if (domain) cookieString += "; domain=" + escape(domain);
     if (secure) cookieString += "; secure";
     document.cookie = cookieString;
 }
 
-function createMultiValueCookie(name, cookieValuesArray){
+function createMultiValueCookie(name, cookieValuesArray) {
     var cookieValueString = "";
-    for(var i=0; i < cookieValuesArray.length; i++){
-        if(cookieValueString.length > 0){
+    for (var i = 0; i < cookieValuesArray.length; i++) {
+        if (cookieValueString.length > 0) {
             cookieValueString += "#";
         }
         cookieValueString += cookieValuesArray[i];
@@ -37,5 +37,5 @@ function getCookie(name) {
 }
 
 function deleteCookie(name) {
-    createCookie(name,"",-1);
+    createCookie(name, "", -1);
 }
