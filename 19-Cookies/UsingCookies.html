@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Using Cookies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function createCookie(name, value, days, path, domain, secure) {
+        if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                var expires = date.toGMTString();
+            }
+            else var expires = "";
+            cookieString = name + "=" + escape (value);
+            if (expires) cookieString += "; expires=" + expires;
+            if (path) cookieString += "; path=" + escape (path);
+            if (domain) cookieString += "; domain=" + escape (domain);
+            if (secure) cookieString += "; secure";
+            document.cookie = cookieString;
+        }
+        createCookie("username","Sam Jones", 5);
+        createCookie("location","USA", 5);
+        createCookie("status","fullmember", 5);
+    </script>
+
+</head>
+
+<body>
+Check the cookies for this domain using your browser tools.
+</body>
+
+</html>
